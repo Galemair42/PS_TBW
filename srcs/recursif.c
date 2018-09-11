@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/20 17:26:32 by galemair          #+#    #+#             */
-/*   Updated: 2018/09/11 22:49:19 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/11 22:32:48 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_quick(t_stack *list)
 	}
 }
 
-void	divide_median(t_stack **list_a, t_stack **list_b)
+int		divide_median_to(t_stack **list_a, t_stack **list_b)
 {
 	int median;
 
@@ -40,6 +40,7 @@ void	divide_median(t_stack **list_a, t_stack **list_b)
 		}
 	}
 }
+
 
 
 void	quick_sort_to_a(t_stack **list_a, t_stack **list_b)
@@ -62,14 +63,10 @@ void	quick_sort_to_a(t_stack **list_a, t_stack **list_b)
 			}
 
 		}
-		printf("MEDIAN = %d\n", median);
-		fflush(NULL);
-		print_list(*list_a);
-		printf("\n\n-------------\n\n");
 	}
 	while (get_list_size(*list_b) > 0)
 		pa(list_a, list_b, DISPLAY);
-	exit (0);
+//	print_list(*list_a);
 }
 
 void	sort_b(t_stack **list_a, t_stack **list_b, int to_seek)
@@ -119,9 +116,10 @@ void	sort_list(t_stack **list_a, t_stack **list_b)
 }
 void	push_swap(t_stack *list_a, t_stack *list_b)
 {
-	pre_sort(list_a);
-	divide_median(&list_a, &list_b);
-	quick_sort_to_a(&list_a, &list_b);
+//	pre_sort(list_a);
+//	start_recursive_quicksort(&list_a, &list_b);
+//	divide_median(&list_a, &list_b);
+//	quick_sort_to_a(&list_a, &list_b);
 	sort_list(&list_a, &list_b);
 	//printf("%d\n", n);
 	//print_quick(quick);

@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 14:15:32 by galemair          #+#    #+#             */
-/*   Updated: 2018/05/25 20:33:14 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/11 22:41:31 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "global.h"
 
-# define DISPLAY 1
+# define DISPLAY 0
 void	push_swap(t_stack *list_a, t_stack *list_b);
 
 /*
