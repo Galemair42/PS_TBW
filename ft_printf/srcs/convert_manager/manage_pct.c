@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   manage_pct.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/20 17:28:56 by galemair          #+#    #+#             */
-/*   Updated: 2018/09/13 14:22:12 by galemair         ###   ########.fr       */
+/*   Created: 2018/05/04 16:56:22 by galemair          #+#    #+#             */
+/*   Updated: 2018/05/15 20:04:06 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "ft_printf.h"
 
-typedef	struct	s_tab
+void	manage_pct(t_parse *datas, t_buffer *buff, va_list args)
 {
-	char		*str;
-	void		(*f)(t_stack **list_a, t_stack **list_b, int display);
-}				t_tab;
-/*
-**------------CHECKER.C-------------
-*/
-void			checker(t_stack *list_a, t_stack *list_b);
-
-#endif
+	if (datas->minus == 0)
+		datas->zero == 1 ? ft_putnchar_buff(buff, '0', (datas->width - 1)) :
+		ft_putnchar_buff(buff, ' ', (datas->width - 1));
+	ft_putnchar_buff(buff, '%', 1);
+	if (datas->minus == 1)
+		ft_putnchar_buff(buff, ' ', (datas->width - 1));
+}

@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 12:09:08 by galemair          #+#    #+#             */
-/*   Updated: 2018/05/22 15:18:26 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/12 14:32:48 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	sa(t_stack **list_a, t_stack **list_b, int display)
 	tmp->next = (*list_a)->next;
 	(*list_a)->next = tmp;
 }
+
 void	ss(t_stack **list_a, t_stack **list_b, int display)
 {
 	if (display == 1)

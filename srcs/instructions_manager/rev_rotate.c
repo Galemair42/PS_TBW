@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 14:19:30 by galemair          #+#    #+#             */
-/*   Updated: 2018/05/22 15:18:03 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/12 14:32:20 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void		rra(t_stack **list_a, t_stack **list_b, int display)
 	*list_a = tmp->next;
 	tmp->next = NULL;
 }
+
 void		rrb(t_stack **list_a, t_stack **list_b, int display)
 {
 	t_stack *tmp;

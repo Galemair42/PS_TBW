@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 14:18:03 by galemair          #+#    #+#             */
-/*   Updated: 2018/05/22 15:18:16 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/12 14:33:12 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		ra(t_stack **list_a, t_stack **list_b, int display)
 {
 	t_stack *tmp;
-	
+
 	if (display == 1)
 		ft_printf("ra\n");
 	if (!((*list_a)->next) || !((*list_a)->next))

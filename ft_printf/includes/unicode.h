@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   unicode.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/20 17:28:56 by galemair          #+#    #+#             */
-/*   Updated: 2018/09/13 14:22:12 by galemair         ###   ########.fr       */
+/*   Created: 2018/05/15 19:45:25 by galemair          #+#    #+#             */
+/*   Updated: 2018/05/17 17:47:26 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef UNICODE_H
+# define UNICODE_H
 
-typedef	struct	s_tab
+typedef	struct			s_mask
 {
-	char		*str;
-	void		(*f)(t_stack **list_a, t_stack **list_b, int display);
-}				t_tab;
-/*
-**------------CHECKER.C-------------
-*/
-void			checker(t_stack *list_a, t_stack *list_b);
+	const unsigned int	m1;
+	const unsigned int	m2;
+	const unsigned int	m3;
+}						t_mask;
 
+const t_mask g_mask =
+{
+	.m1 = 49280,
+	.m2 = 14712960,
+	.m3 = 4034953344,
+};
 #endif

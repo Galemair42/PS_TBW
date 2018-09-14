@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 14:22:05 by galemair          #+#    #+#             */
-/*   Updated: 2018/05/22 15:19:27 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/12 17:59:34 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	error(t_stack **list_a, t_stack **list_b, int display)
 {
 	display++;
-	ft_printf("ERROR\n");
+	ft_printf("Error\n");
 }

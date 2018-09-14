@@ -6,20 +6,11 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/20 14:48:00 by galemair          #+#    #+#             */
-/*   Updated: 2018/05/26 02:41:39 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/13 14:45:42 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "global.h"
-
-void	push_front(t_quick **begin_list)
-{
-	t_quick *tmp;
-	
-	tmp = ft_memalloc(sizeof(t_quick));
-	tmp->next = *begin_list;
-	*begin_list = tmp;
-}
 
 int		check_doublon(t_stack *list_a, int number)
 {
@@ -31,14 +22,14 @@ int		check_doublon(t_stack *list_a, int number)
 	}
 	return (1);
 }
+
 int		check_error_int(char *number, int length)
-{	
+{
 	char max[11];
 	char min[12];
 
 	ft_strcpy(max, "2147483647");
 	ft_strcpy(min, "-2147483648");
-
 	if (*number == '-')
 	{
 		if (length < 11)
@@ -58,8 +49,8 @@ int		check_error_int(char *number, int length)
 
 int		ft_get_value(char **str, int *value, t_stack *list_a)
 {
-	int length;
-	char *tmp;
+	int		length;
+	char	*tmp;
 
 	length = 0;
 	tmp = *str;
@@ -77,13 +68,15 @@ int		ft_get_value(char **str, int *value, t_stack *list_a)
 		tmp++;
 		length++;
 	}
-	if (check_error_int(*str, length) == 0 || check_doublon(list_a, ft_atoi(*str)) == 0)
+	if (check_error_int(*str, length) == 0 ||
+		check_doublon(list_a, ft_atoi(*str)) == 0)
 		return (0);
 	*value = ft_atoi(*str);
 	*str = tmp - 1;
 	return (1);
 }
-void		create_elems(t_stack **list_a, int number)
+
+void	create_elems(t_stack **list_a, int number)
 {
 	t_stack *tmp;
 
@@ -103,12 +96,13 @@ void		create_elems(t_stack **list_a, int number)
 	(tmp->next)->index = -1;
 	(tmp->next)->next = NULL;
 }
+
 int		create_list(int count, char **numbers, t_stack **list_a)
 {
-	int current_value;
-	char *tmp;
+	int		current_value;
+	char	*tmp;
 
-	while (count > 0) 
+	while (count > 0)
 	{
 		tmp = *numbers;
 		while (*tmp)
@@ -128,4 +122,3 @@ int		create_list(int count, char **numbers, t_stack **list_a)
 	}
 	return (1);
 }
-

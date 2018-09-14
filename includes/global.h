@@ -6,15 +6,15 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/20 17:30:38 by galemair          #+#    #+#             */
-/*   Updated: 2018/05/25 20:32:13 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/13 14:50:41 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GLOBAL_H
 # define GLOBAL_H
 
-#include <stdlib.h>
-#include "libft.h"
+# include <stdlib.h>
+# include "libft.h"
 
 typedef	struct s_stack	t_stack;
 
@@ -26,7 +26,7 @@ struct			s_stack
 	t_stack		*next;
 };
 
-typedef	struct	s_quick	t_quick;
+typedef	struct s_quick	t_quick;
 
 struct			s_quick
 {
@@ -48,13 +48,17 @@ void			rrb(t_stack **list_a, t_stack **list_b, int display);
 void			rrr(t_stack **list_a, t_stack **list_b, int display);
 void			error(t_stack **list_a, t_stack **list_b, int display);
 /*
- **-------------DEBUG.C--------------
- */
+**-------------DEBUG.C--------------
+*/
 void			print_list(t_stack *list);
 /*
- **-------------CREATE_LIST.C--------
- */
+**-------------CREATE_LIST.C--------
+*/
 int				create_list(int count, char **numbers, t_stack **list_a);
+/*
+**--------------UTILS.C--------------
+*/
 void			push_front(t_quick **begin_list);
+void			free_lists(t_stack *list_a, t_stack *list_b);
 
 #endif
