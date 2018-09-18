@@ -6,7 +6,7 @@
 #    By: galemair <galemair@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/06 09:01:02 by galemair          #+#    #+#              #
-#    Updated: 2018/09/13 15:21:05 by galemair         ###   ########.fr        #
+#    Updated: 2018/09/18 15:34:08 by galemair         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,11 +38,11 @@ OBJS		=		$(SRCS:.c=.o)
 
 all:	 lib printf $(CHECKER) $(PUSH_SWAP)
 
-$(CHECKER):	 $(OBJS)
+$(CHECKER):	 srcs/main_checker.c $(SRCS) $(OBJS)
 	@gcc $(FLAGS) -o $@ $(OBJS) srcs/main_checker.c -L libft/ -lft -L ft_printf/ -lftprintf -I $(INCLUDES)
 	@printf	"\nCHECKER COMPILED\n"
 
-$(PUSH_SWAP):		$(OBJS)
+$(PUSH_SWAP): srcs/main_push_swap.c $(SRCS) $(OBJS)
 	@gcc $(FLAGS) -o $@ $(OBJS) srcs/main_push_swap.c -L libft/ -lft -L ft_printf/ -lftprintf -I $(INCLUDES)
 	@printf	"\nPUSH_SWAP COMPILED\n"
 

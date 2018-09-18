@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 15:06:28 by galemair          #+#    #+#             */
-/*   Updated: 2018/09/13 14:59:48 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/18 15:41:06 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,19 @@ void	push_front(t_quick **begin_list)
 	*begin_list = tmp;
 }
 
-void	free_lists(t_stack *list_a, t_stack *list_b)
+void	free_quick(t_quick *list)
+{
+	t_quick *tmp;
+
+	while (list)
+	{
+		tmp = list;
+		free(tmp);
+		list = list->next;
+	}
+}
+
+void	free_list(t_stack *list_a)
 {
 	t_stack *tmp;
 
@@ -31,12 +43,6 @@ void	free_lists(t_stack *list_a, t_stack *list_b)
 		tmp = list_a;
 		free(tmp);
 		list_a = list_a->next;
-	}
-	while (list_b)
-	{
-		tmp = list_b;
-		free(tmp);
-		list_b = list_b->next;
 	}
 }
 

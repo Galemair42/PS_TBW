@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/20 17:30:38 by galemair          #+#    #+#             */
-/*   Updated: 2018/09/13 14:50:41 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/18 14:05:36 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int				create_list(int count, char **numbers, t_stack **list_a);
 **--------------UTILS.C--------------
 */
 void			push_front(t_quick **begin_list);
-void			free_lists(t_stack *list_a, t_stack *list_b);
+void			free_list(t_stack *list_a);
+void			free_quick(t_quick *list);
 
 #endif

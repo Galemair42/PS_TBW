@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/07 14:46:49 by galemair          #+#    #+#             */
-/*   Updated: 2018/05/17 18:25:02 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/18 10:56:47 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		calc_uintsize(uintmax_t value, int base)
 
 void	ft_uputnbr_buff(uintmax_t value, t_buffer *buff, int base, int maj)
 {
-	if (value >= base)
+	if (value >= (uintmax_t)base)
 		ft_uputnbr_buff(value / base, buff, base, maj);
 	ft_putnchar_buff(buff, get_rank(value % base, maj), 1);
 }

@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 18:42:20 by galemair          #+#    #+#             */
-/*   Updated: 2018/09/13 14:45:19 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/18 16:18:33 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,13 @@ void	display_check(t_stack *list_a, t_stack *list_b)
 		ft_printf("KO\n");
 }
 
+void	free_helper(t_stack *list_a, t_stack *list_b, t_tab *table)
+{
+	free(table);
+	free_list(list_a);
+	free_list(list_b);
+}
+
 void	checker(t_stack *list_a, t_stack *list_b)
 {
 	char		*instruction;
@@ -87,9 +94,14 @@ void	checker(t_stack *list_a, t_stack *list_b)
 			ft_strcmp("end", table[i].str) != 0)
 			i++;
 		table[i].f(&list_a, &list_b, 0);
+		free(instruction);
+		instruction = NULL;
 		if (i == 11)
+		{
+			free_helper(list_a, list_b, table);
 			return ;
+		}
 	}
-	free(table);
 	display_check(list_a, list_b);
+	free_helper(list_a, list_b, table);
 }

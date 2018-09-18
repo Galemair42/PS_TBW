@@ -6,7 +6,7 @@
 /*   By: galemair <galemair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 11:19:07 by galemair          #+#    #+#             */
-/*   Updated: 2018/09/13 14:20:24 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/18 15:48:52 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ void	sort_3_elems(t_stack **list_a, t_stack **list_b)
 
 void	manage_small_list(t_stack **list_a, t_stack **list_b)
 {
-	int last_sorted;
-	int median;
+	int			last_sorted;
+	int			median;
+	t_quick		*to_free;
 
 	median = -1;
 	if (get_list_size(*list_a) > 90)
 		median = 3;
-	divide_median(list_a, list_b, median);
+	to_free = divide_median(list_a, list_b, median);
 	sort_3_elems(list_a, list_b);
 	last_sorted = ((*list_a)->index - 1);
 	while (get_list_size(*list_b) > 0)
@@ -51,4 +52,5 @@ void	manage_small_list(t_stack **list_a, t_stack **list_b)
 		sort_b(list_a, list_b, last_sorted);
 		last_sorted--;
 	}
+	free_quick(to_free);
 }

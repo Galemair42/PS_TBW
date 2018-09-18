@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/20 17:26:32 by galemair          #+#    #+#             */
-/*   Updated: 2018/09/13 15:17:11 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/18 15:31:04 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void		sort_list(t_stack **list_a, t_stack **list_b)
 	{
 		if ((*list_a)->index == last_sorted + 1 && flag_sa == 1)
 			flag_sa = opti_sort_list(list_a, list_b, &last_sorted);
-		if ((*list_a)->index == last_sorted + 1)
+		else if ((*list_a)->index == last_sorted + 1)
 		{
 			last_sorted++;
 			ra(list_a, list_b, DISPLAY);
@@ -108,13 +108,21 @@ void		push_swap(t_stack *list_a, t_stack *list_b)
 
 	pre_sort(list_a);
 	if (list_is_sorted(list_a, list_b))
+	{
+		free_list(list_a);
 		return ;
+	}
 	if (get_list_size(list_a) <= 200)
 	{
 		manage_small_list(&list_a, &list_b);
+		free_list(list_a);
+		free_list(list_b);
 		return ;
 	}
 	quick = divide_median(&list_a, &list_b, 5);
 	quick_sort_to_a(&list_a, &list_b, quick);
 	sort_list(&list_a, &list_b);
+	free_quick(quick);
+	free_list(list_a);
+	free_list(list_b);
 }

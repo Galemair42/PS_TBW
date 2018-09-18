@@ -6,7 +6,7 @@
 /*   By: galemair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 22:17:47 by galemair          #+#    #+#             */
-/*   Updated: 2018/05/15 22:30:05 by galemair         ###   ########.fr       */
+/*   Updated: 2018/09/18 10:55:52 by galemair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ void	manage_string(t_parse *datas, t_buffer *buff, va_list args)
 		str = "(null)";
 	if (str)
 	{
-		size = datas->precision < ft_strlen(str) ?
-		datas->precision : ft_strlen(str);
+		size = datas->precision < (int)ft_strlen(str) ?
+		datas->precision : (int)ft_strlen(str);
 		if (datas->minus == 0 && size < datas->width)
 			ft_putnchar_buff(buff, datas->zero == 1 ?
 			'0' : ' ', datas->width - size);

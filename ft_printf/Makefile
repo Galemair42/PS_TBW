@@ -6,12 +6,14 @@
 #    By: galemair <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/05 14:48:14 by galemair          #+#    #+#              #
-#    Updated: 2018/09/05 18:48:32 by galemair         ###   ########.fr        #
+#    Updated: 2018/09/18 10:59:13 by galemair         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 RM			=	rm -rf
+
+FLAGS		=	-Wall -Wextra -Werror
 
 NAME		=	libftprintf.a
 
@@ -59,7 +61,7 @@ lib:
 
 %.o : %.c
 	@printf "✌️ "
-	@gcc -o $@ -c $< -I $(INCLUDES)
+	@gcc $(FLAGS) -o $@ -c $< -I $(INCLUDES)
 
 clean:
 	@$(RM) $(OBJS)
